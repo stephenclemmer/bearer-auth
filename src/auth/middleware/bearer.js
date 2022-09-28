@@ -11,7 +11,7 @@ module.exports = async (req, res, next) => {
     try {
 
       const token = req.headers.authorization.split(' ').pop();
-      const validUser = await users.authenticateBearer(token);
+      const validUser = await users.authenticateWithToken(token);
 
       if (validUser){
 
